@@ -261,6 +261,21 @@ Module Program
         Return result
     End Function
 
+    'show steps To move hanoi discs from 1 To 3 With <number_of_discs> numbers Of discs
+    Sub HanoiSteps(number_of_discs)
+        Tower(number_of_discs, "1", "2", "3")
+    End Sub
+
+    Sub Tower(n, from_rod, aux_rod, to_rod)
+        If n = 1 Then
+            Console.WriteLine(from_rod + "->" + to_rod)
+        Else
+            Tower(n - 1, from_rod, to_rod, aux_rod)
+            Console.WriteLine(from_rod + "->" + to_rod)
+            Tower(n - 1, aux_rod, from_rod, to_rod)
+        End If
+    End Sub
+
     Sub Main(args As String())
         'BubbleAlgorithm(New List(Of Integer) From {2, 1, 6, 7, 4})
         'SieveOfErasthotenes(100)
@@ -317,5 +332,7 @@ Module Program
         'node1.right.right = New Node("4")
         'node1.right.left = New Node("7")
         'Console.WriteLine(PostOrder(node1))
+
+        'HanoiSteps(3)
     End Sub
 End Module
