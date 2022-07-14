@@ -1,0 +1,13 @@
+C:\Users\Usuario\source\repos\ComplexSolutions\ComplexSolutions\bin\Debug\netcoreapp3.1\ComplexSolutions.exe
+C:\Users\Usuario\source\repos\ComplexSolutions\ComplexSolutions\bin\Debug\netcoreapp3.1\ComplexSolutions.deps.json
+C:\Users\Usuario\source\repos\ComplexSolutions\ComplexSolutions\bin\Debug\netcoreapp3.1\ComplexSolutions.runtimeconfig.json
+C:\Users\Usuario\source\repos\ComplexSolutions\ComplexSolutions\bin\Debug\netcoreapp3.1\ComplexSolutions.runtimeconfig.dev.json
+C:\Users\Usuario\source\repos\ComplexSolutions\ComplexSolutions\bin\Debug\netcoreapp3.1\ComplexSolutions.dll
+C:\Users\Usuario\source\repos\ComplexSolutions\ComplexSolutions\bin\Debug\netcoreapp3.1\ComplexSolutions.pdb
+C:\Users\Usuario\source\repos\ComplexSolutions\ComplexSolutions\obj\Debug\netcoreapp3.1\ComplexSolutions.vbproj.AssemblyReference.cache
+C:\Users\Usuario\source\repos\ComplexSolutions\ComplexSolutions\obj\Debug\netcoreapp3.1\ComplexSolutions.AssemblyInfoInputs.cache
+C:\Users\Usuario\source\repos\ComplexSolutions\ComplexSolutions\obj\Debug\netcoreapp3.1\ComplexSolutions.AssemblyInfo.vb
+C:\Users\Usuario\source\repos\ComplexSolutions\ComplexSolutions\obj\Debug\netcoreapp3.1\ComplexSolutions.vbproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\ComplexSolutions\ComplexSolutions\obj\Debug\netcoreapp3.1\ComplexSolutions.dll
+C:\Users\Usuario\source\repos\ComplexSolutions\ComplexSolutions\obj\Debug\netcoreapp3.1\ComplexSolutions.pdb
+C:\Users\Usuario\source\repos\ComplexSolutions\ComplexSolutions\obj\Debug\netcoreapp3.1\ComplexSolutions.genruntimeconfig.cache
