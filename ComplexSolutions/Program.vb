@@ -276,6 +276,53 @@ Module Program
         End If
     End Sub
 
+    'find minimum number of items to delete to avoid overlap of intervals
+    Function eraseOverlapIntervals(intervals As List(Of Int32()))
+        Dim sorted = MergeSortPairs(intervals)
+        Return Overlap(sorted)
+    End Function
+
+    Function MergeSortPairs(intervals As List(Of Int32()))
+        Dim list1 = intervals.GetRange(0, Math.Floor(intervals.Count / 2))
+        Dim list2 = intervals.GetRange(Math.Floor(intervals.Count / 2), intervals.Count - Math.Floor(intervals.Count / 2))
+        If list1.Count > 1 Then
+            list1 = MergeSortPairs(list1)
+        End If
+        If list2.Count > 1 Then
+            list2 = MergeSortPairs(list2)
+        End If
+        Dim sol As List(Of Int32()) = New List(Of Int32())
+        For Each i In Enumerable.Range(0, intervals.Count)
+            If list2.Count > 0 AndAlso (list1.Count = 0 OrElse list2(0)(0) < list1(0)(0)) Then
+                sol.Add(list2(0).Clone)
+                list2.RemoveAt(0)
+            Else
+                sol.Add(list1(0).Clone)
+                list1.RemoveAt(0)
+            End If
+        Next
+        Return sol
+    End Function
+
+    Function Overlap(sorted As List(Of Int32()))
+        Dim first = 0
+        Dim second = 1
+        Dim sol = 0
+        While second < sorted.Count
+            If sorted(first)(1) > sorted(second)(0) Then
+                sol += 1
+                If sorted(first)(1) > sorted(second)(1) Then
+                    first = second
+                End If
+            Else
+                first = second
+            End If
+            second += 1
+        End While
+        Return sol
+    End Function
+
+
     Sub Main(args As String())
         'BubbleAlgorithm(New List(Of Integer) From {2, 1, 6, 7, 4})
         'SieveOfErasthotenes(100)
@@ -334,5 +381,7 @@ Module Program
         'Console.WriteLine(PostOrder(node1))
 
         'HanoiSteps(3)
+
+        'Console.WriteLine(eraseOverlapIntervals(New List(Of Integer()) From {{{1, 2}}, {{7, 9}}, {{3, 5}}, {{2, 10}}, {{2, 4}}}))
     End Sub
 End Module
