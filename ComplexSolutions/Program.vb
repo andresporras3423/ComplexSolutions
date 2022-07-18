@@ -322,6 +322,42 @@ Module Program
         Return sol
     End Function
 
+    '    //check if parentheses order Is valid
+    Function ValidParentheses(str As String)
+        While str.Length > 0
+            Dim currentLength = str.Length
+            Dim i = 0
+            While i < str.Length - 1
+                If ProperPair(str(i), str(i + 1)) Then
+                    str = str.Remove(i, 2)
+                    i -= 1
+                End If
+                i += 1
+            End While
+            If currentLength = str.Length Then
+                Return False
+            End If
+        End While
+        Return True
+    End Function
+
+    Function ProperPair(x As String, y As String)
+        If {"{}", "[]", "()"}.Contains(x + y) Then
+            Return True
+        End If
+        Return False
+    End Function
+
+    '    #receive an Integer number And count how many 1's has it's binary version
+    Function HammingWeight(n As Int32)
+        Dim count = 0
+        While n > 0
+            count += (n Mod 2)
+            n = Math.Floor(n / 2)
+        End While
+        Return count
+    End Function
+
 
     Sub Main(args As String())
         'BubbleAlgorithm(New List(Of Integer) From {2, 1, 6, 7, 4})
@@ -383,5 +419,9 @@ Module Program
         'HanoiSteps(3)
 
         'Console.WriteLine(eraseOverlapIntervals(New List(Of Integer()) From {{{1, 2}}, {{7, 9}}, {{3, 5}}, {{2, 10}}, {{2, 4}}}))
+
+        'Console.WriteLine(ValidParentheses("[]{()}([)]"))
+
+        'Console.WriteLine(HammingWeight(7))
     End Sub
 End Module
